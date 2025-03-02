@@ -4,13 +4,13 @@ import ProjectDetails from "../components/sections/EditProjectDetails";
 import { useParams } from "react-router-dom";
 
 const EditProject = () => {
-    const { id } = useParams(); // 🔹 Hämta ID från URL
+    const { id } = useParams();
 
     return (
         <main id="project">
             <div className="container">
                 <SectionHeader title="PROJEKT - UPPDATERA PROJEKT"/>
-                <ProjectDetails projectId={id} /> {/* 🔹 Skickar ID till ProjectDetails */}
+                <ProjectDetails projectId={id} />
             </div>
         </main>
     );

@@ -10,7 +10,7 @@ const ProjectListItem = ({ project }) => {
             <td>{project.title}</td>
             <td>{project.startDate}</td>
             <td>{project.endDate}</td>
-            <td>{project.projectManager?.fullName || "Ingen projektledare"}</td>
+            <td>{project.projectManager?.fullName}</td>
         </tr>
     );
 }

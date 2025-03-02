@@ -9,7 +9,8 @@ const ProjectDetails = () => {
     const [clientOptions, setClientOptions] = useState([]);
     const [productOptions, setProductOptions] = useState([]);
     const [projectManagersOptions, setProjectManagersOptions] = useState([]);
-
+    
+    
     const fetchData = async (url, setter) => {
         try {
             const response = await fetch(url);
@@ -21,6 +22,7 @@ const ProjectDetails = () => {
         }
     };
 
+    //chatGPT genererad
     useEffect(() => {
         const endpoints = [
             { url: "https://localhost:7242/api/statuses", setter: setStatusOptions },
@@ -31,6 +33,8 @@ const ProjectDetails = () => {
 
         endpoints.forEach(({ url, setter }) => fetchData(url, setter));
     }, []);
+
+
       //tomma fält för alla data
     const [formData, setFormData] = useState({
         projectName: "",
@@ -67,7 +71,7 @@ const ProjectDetails = () => {
     };
 
     return (
-        <div className="container bg-white p-6 rounded-lg shadow-lg">
+        <div>
             <h2 className="section-title">Skapa nytt projekt</h2>
             <form onSubmit={handleSubmit}>
                 <table className="project-table">

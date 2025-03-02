@@ -51,7 +51,8 @@ const EditProjectDetails = () => {
             getProject(id);
         }
     }, [id]);
-     //om den hittar id med getprojects så fyller den i alla info som idt har
+
+     //om den hittar id med getprojects så fyller den i alla info som id har
     useEffect(() => {
         if (project?.id) {
             setFormData({

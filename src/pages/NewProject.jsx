@@ -7,7 +7,7 @@ const NewProject = () => {
         <main id="project">
             <div className="container">
                 <SectionHeader title="PROJEKT - SKAPA NYTT" />
-                <ProjectDetails /> {/* Använder ProjectDetails för att hantera formuläret */}
+                <ProjectDetails />
             </div>
         </main>
     );
