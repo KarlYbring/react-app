@@ -72,6 +72,7 @@ const EditProjectDetails = () => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
+
      //ändrar och skickar iväg ny info och uppdaterar projektet
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -87,7 +88,8 @@ const EditProjectDetails = () => {
         projectManagerId: Number(formData.projectManagerId),
         productId: Number(formData.productId),
         };
-        //chatGPT genererard kod.
+
+        //chatGPT genererard kod som gör PUT förfrågan och hanterar fel samt navigerar tillbaka till alla projekt efter lyckad update.
         try {
             const response = await fetch(`https://localhost:7242/api/projects/${id}`, { 
                 method: "PUT",

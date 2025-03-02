@@ -11,6 +11,7 @@ const ProjectDetails = () => {
     const [projectManagersOptions, setProjectManagersOptions] = useState([]);
     
     
+    
     const fetchData = async (url, setter) => {
         try {
             const response = await fetch(url);
@@ -22,7 +23,7 @@ const ProjectDetails = () => {
         }
     };
 
-    //chatGPT genererad
+    //chatGPT genererad som hämtar data från flera API samtidigt vid sidans laddning.
     useEffect(() => {
         const endpoints = [
             { url: "https://localhost:7242/api/statuses", setter: setStatusOptions },

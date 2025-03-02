@@ -20,7 +20,7 @@ export const ProjectProvider = ({ children }) => {
     const [projects, setProjects] = useState([]);
     const [project, setProject] = useState(defaultProjectValues);
 
-     //chatGPT Genererad
+     //chatGPT Genererad för API-anrop
     const fetchApi = async (url, options = {}) => {
         try {
             const response = await fetch(url, options);
@@ -72,6 +72,7 @@ export const ProjectProvider = ({ children }) => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedProject),
             });
+            
             //fått hjälp av CHATpt för mappningsdelen
             setProjects((prevProjects) =>
                 prevProjects.map((p) => (p.id === id ? { ...p, ...updatedProject } : p))
