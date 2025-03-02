@@ -11,7 +11,8 @@ const EditProjectDetails = () => {
     const [clientOptions, setClientOptions] = useState([]);
     const [productOptions, setProductOptions] = useState([]);
     const [projectManagersOptions, setProjectManagersOptions] = useState([]);
-    
+
+    //chatGPT genererad för att hämta all data samtidigt.
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -33,7 +34,7 @@ const EditProjectDetails = () => {
 
         fetchData();
     }, []);
-
+    //tomma fält för alla data
     const [formData, setFormData] = useState({
         projectName: "",
         description: "",
@@ -50,7 +51,7 @@ const EditProjectDetails = () => {
             getProject(id);
         }
     }, [id]);
-
+     //om den hittar id med getprojects så fyller den i alla info som idt har
     useEffect(() => {
         if (project?.id) {
             setFormData({
@@ -70,10 +71,10 @@ const EditProjectDetails = () => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
-
+     //ändrar och skickar iväg ny info och uppdaterar projektet
     const handleSubmit = async (e) => {
         e.preventDefault();
-   
+        //fått hjälp med av chatGPT med att omvandla alla stränga till Number.
         const payload = {
         id: Number(id),
         title: formData.projectName,
@@ -85,6 +86,7 @@ const EditProjectDetails = () => {
         projectManagerId: Number(formData.projectManagerId),
         productId: Number(formData.productId),
         };
+        //chatGPT genererard kod.
         try {
             const response = await fetch(`https://localhost:7242/api/projects/${id}`, { 
                 method: "PUT",

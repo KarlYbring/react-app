@@ -31,7 +31,7 @@ const ProjectDetails = () => {
 
         endpoints.forEach(({ url, setter }) => fetchData(url, setter));
     }, []);
-
+      //tomma fält för alla data
     const [formData, setFormData] = useState({
         projectName: "",
         description: "",
@@ -44,7 +44,7 @@ const ProjectDetails = () => {
     });
 
     const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-
+     //fyller i fält och skickar en POST till API och uppdaterar sidan //Fått lite hjälp av chatGPT
     const handleSubmit = async (e) => {
         e.preventDefault();
         const payload = {
